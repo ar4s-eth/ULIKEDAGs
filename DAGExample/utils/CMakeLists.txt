@@ -2,7 +2,7 @@ cmake_minimum_required ( VERSION 3.1 )
 
 project(utils)
 
-find_package(GLM REQUIRED)
+# find_package(GLM REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED)
 
@@ -19,13 +19,13 @@ add_library(utils STATIC
 
 target_link_libraries(utils 
 	PUBLIC
-		glm 
+		GLM 
 	PRIVATE
 		OpenGL::GL 
 		GLEW::GLEW 
 )
 
-target_include_directories( utils 
+target_include_directories(utils 
 	PUBLIC
 		$<BUILD_INTERFACE:${utils_BINARY_DIR}>
 		$<BUILD_INTERFACE:${utils_SOURCE_DIR}>

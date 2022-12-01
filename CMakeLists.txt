@@ -18,11 +18,12 @@ set(as_subproject
 		DAGLoader
 		DAGTracer
 )
-macro(find_package)
-	if(NOT "${ARGV0}" IN_LIST as_subproject)
-		_find_package(${ARG0})
-	endif()
-endmacro()
+
+# macro(find_package)
+# 	if(NOT "${ARGV0}" IN_LIST as_subproject)
+# 		_find_package(${ARG0})
+# 	endif()
+# endmacro()
 
 # Since GLM has decided to act like a little prick
 # which can not be trusted, I will bundle the
@@ -32,15 +33,15 @@ endmacro()
 ############ GLM ############
 add_definitions(-DGLM_FORCE_PURE)
 add_library(glm INTERFACE)
-target_include_directories(glm INTERFACE ${GLM_INCLUDE_DIRS})#thirdparty/glm)
+target_include_directories(glm INTERFACE)
 
 ############ CEREAL ############
 add_library(cereal INTERFACE)
-target_include_directories(cereal INTERFACE thirdparty/cereal/include/)
+target_include_directories(cereal INTERFACE)
 
 ############ STB ############
 add_library(stb INTERFACE)
-target_include_directories(stb INTERFACE thirdparty/stb)
+target_include_directories(stb INTERFACE)
 
 
 

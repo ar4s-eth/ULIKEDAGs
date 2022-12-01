@@ -3,8 +3,8 @@ cmake_minimum_required ( VERSION 3.1 )
 project(DAG)
 
 add_library(DAG STATIC
-			DAG/DAG.h
-			DAG/DAG.cpp
+			DAG.h
+			DAG.cpp
 )
 
 target_link_libraries(DAG 
