@@ -20,7 +20,7 @@ set(as_subproject
 )
 macro(find_package)
 	if(NOT "${ARGV0}" IN_LIST as_subproject)
-		_find_package(${ARGV})
+		_find_package(${ARG0})
 	endif()
 endmacro()
 
@@ -32,7 +32,7 @@ endmacro()
 ############ GLM ############
 add_definitions(-DGLM_FORCE_PURE)
 add_library(glm INTERFACE)
-target_include_directories(glm INTERFACE thirdparty/glm)
+target_include_directories(glm INTERFACE ${GLM_INCLUDE_DIRS})#thirdparty/glm)
 
 ############ CEREAL ############
 add_library(cereal INTERFACE)
